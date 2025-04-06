@@ -1,0 +1,223 @@
+/* Bem vindo ao trabalho, Isaías Levi Tavares da Silva - fnuf - 37023010*/
+
+/* ============= GOOGLE FONTS ============= */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+/* ============= VARIAVEIS ============= */
+:root {
+  --primary-color: #550FED;
+  --secondary-color: #CCB7F9;
+  --black: #1E1E1E;
+  --gray: #716C7C;
+  --border: #C8C2D6;
+  --background: #F2F4F5;
+}
+
+html {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Reset */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+/* Fim do reset */
+
+header {
+  background-color: var(--primary-color);
+  padding: 28px 64px;
+}
+
+@media(max-width: 1024px){
+  header {
+    padding: 28px 38px;
+  }
+}
+
+.container {
+  width: 1205px;
+  margin: 0 auto;
+}
+
+@media(max-width: 1024px){
+  .container {
+    width: 100%;
+  }
+}
+
+.display-flex {
+  display: flex;
+}
+
+nav {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 84px;
+}
+
+nav ul {
+  gap: 72px;
+}
+
+@media (max-width: 1024px) {
+  nav ul {
+    display: none !important;
+  }
+}
+
+nav ul li a {
+  color: var(--secondary-color);
+}
+
+nav ul li a:hover {
+  color: var(--black);
+}
+
+nav .menu-hamburger {
+  display: none;
+}
+
+@media (max-width: 1024px){
+  nav .menu-hamburger {
+    display: block;
+  }
+}
+
+nav .menu-hamburger span {
+  height: 4px;
+  width: 24px;
+  background-color: white;
+  display: block;
+  margin-bottom: 4px;
+}
+
+div h2 {
+  color: white;
+  text-align: center;
+}
+
+/* ============= FORMULÁRIO DE BUSCA (DESKTOP) ============= */
+form {
+  /* Caixa branca arredondada */
+  background-color: white;
+  width: 100%;
+  max-width: 843px;
+  margin: 0 auto;
+  padding: 20px 24px;
+  border-radius: 8px;
+  box-sizing: border-box;
+
+  /* Deixa input e botão em linha */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+form input {
+  background-color: transparent;
+  border: none;
+  height: 35px;
+  flex: 1; /* Para ocupar todo o espaço disponível */
+  font-size: 16px;
+  outline: none;
+}
+
+/* Botão de busca no Desktop */
+form button {
+  background-color: var(--black);
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  padding: 14px 48px; /* Ajuste conforme desejar */
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Espaço entre o texto e o ícone (caso exibido) */
+}
+
+/* Ícone da lupa, por padrão escondido no Desktop */
+form button img {
+  display: none;
+  width: 20px;
+  height: 20px;
+}
+
+/* ============= MEDIA QUERIES ============= */
+
+/* Exemplo: Ajustes para telas maiores que 744px (já tinha no seu CSS) */
+@media(max-width: 744px){
+  form {
+    max-width: 100%;
+  }
+  form input {
+    width: 63%; /* se quiser manter esse comportamento */
+  }
+}
+
+/* Ajustes somente para mobile BEM pequeno (até 422px) */
+@media (max-width: 422px) {
+  /* Reduz o padding do header */
+  header {
+    padding: 28px 16px;
+  }
+  
+  /* Container 100% */
+  .container {
+    width: 100%;
+  }
+
+  /* Logo 154px */
+  nav a img {
+    width: 154px;
+    height: auto;
+  }
+
+  /* Título 24px e quebra de linha */
+  .busca h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+  .linha-mobile {
+    display: block;
+  }
+
+  /* Form de busca fica mais compacto */
+  form {
+    padding: 12px 16px;
+    gap: 8px;
+  }
+
+  /* Botão no mobile exibe apenas a lupa */
+  form button {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: 8px;
+    color: transparent; /* esconde o texto “Buscar” */
+    text-indent: -9999px; /* desloca texto para fora da tela */ /*Boa técnica que eu aprendi😊*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  form button img {
+    display: block; /* mostra o ícone */
+  }
+}
